@@ -1,0 +1,26 @@
+#
+# s3blkdev.conf
+#
+# default config
+#
+
+listen /tmp/s3blkdevd.sock
+port 10809
+# geom_listen 0.0.0.0
+# geom_port 3080
+workers 8
+fetchers 2
+
+s3host 
+s3bucket 
+s3accesskey 
+s3secretkey 
+s3ssl 1
+# s3port 
+# s3name
+s3timeout 10000
+s3maxreqsperconn 100
+
+# [device1]
+# cachedir /ssd/device1
+# size 200000000000

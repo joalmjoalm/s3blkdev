@@ -1,0 +1,15 @@
+[Unit]
+Description=NBD to S3 gateway
+Documentation=http://ogris.de/s3blkdev/
+Requires=local-fs.target
+ConditionFileNotEmpty=/usr/local/etc/s3blkdev.conf
+Conflicts=shutdown.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+# Type=notify
+ExecStart=/usr/local/sbin/s3blkdevd
+ExecStopPost=-/bin/rm /tmp/s3blkdevd.sock
+Restart=on-success
